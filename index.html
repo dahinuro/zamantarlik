@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Zamanlık Tarih — Zamanın Defteri</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --bg:#0e0e0e;
+  --card:#1a1a1a;
+  --text:#f2f2f2;
+  --muted:#9a9a9a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: "Georgia", serif;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+header{
+  text-align:center;
+  padding:90px 20px 60px;
+  animation:fadeDown 1.8s ease;
+}
+
+header h1{
+  font-size:3rem;
+  margin:0;
+  letter-spacing:2px;
+}
+
+header p{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+
+.timeline{
+  max-width:900px;
+  margin:0 auto 80px;
+  padding:0 20px;
+}
+
+.event{
+  background:var(--card);
+  margin-bottom:30px;
+  padding:24px 26px;
+  border-left:4px solid var(--gold);
+  cursor:pointer;
+  transition:.4s ease;
+  animation:fadeUp 1.2s ease;
+}
+
+.event:hover{
+  transform:translateX(8px);
+  background:#222;
+}
+
+.event h3{
+  margin:0;
+  color:var(--gold);
+  font-size:1.4rem;
+}
+
+.event span{
+  display:block;
+  margin-top:6px;
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+.event p{
+  margin-top:16px;
+  line-height:1.7;
+  display:none;
+  font-size:1.05rem;
+}
+
+footer{
+  text-align:center;
+  padding:50px 20px;
+  font-size:.9rem;
+  color:#777;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Zamanlık Tarih</h1>
+  <p>Zaman konuşur, biz dinleriz.</p>
+</header>
+
+<section class="timeline">
+
+  <div class="event" onclick="toggle(this)">
+    <h3>📜 1299</h3>
+    <span>Bir kıvılcım</span>
+    <p>
+      Küçük bir beylik, büyük bir yolculuğa çıktı.
+      O gün fark edilmeyen bir karar,
+      yüzyılları etkileyecek bir hikâyenin ilk satırıydı.
+    </p>
+  </div>
+
+  <div class="event" onclick="toggle(this)">
+    <h3>⚔️ 1923</h3>
+    <span>Yeni bir çağ</span>
+    <p>
+      Eski defterler kapandı.
+      Zaman, bu topraklarda
+      yeni bir sayfa açtı.
+    </p>
+  </div>
+
+  <div class="event" onclick="toggle(this)">
+    <h3>🕰️ Bugün</h3>
+    <span>Henüz yazılıyor</span>
+    <p>
+      Tarih sadece geçmiş değildir.
+      Şu an yaşadığın an,
+      geleceğin arşivine ekleniyor.
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  NRAtölye • Zaman Defteri
+</footer>
+
+<script>
+function toggle(el){
+  const p = el.querySelector("p");
+  p.style.display = p.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
